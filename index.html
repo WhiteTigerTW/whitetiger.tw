@@ -1,18 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhiteTiger</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>WhiteTiger 白虎</title>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
       html {
-        background: #222;
+        background: #333;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 100vh;
+      }
+
+      * {
+        font-family: "Noto Sans TC", "SF Pro TC", "SF Pro Text", "SF Pro Icons",
+          "PingFang TC", "Helvetica Neue", "Helvetica", "Arial",
+          "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP",
+          Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans",
+          微軟正黑體, "LiHei Pro", "WenQuanYi Micro Hei", "Droid Sans Fallback",
+          "AR PL UMing TW", Roboto, "Hiragino Maru Gothic ProN", メイリオ,
+          "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif;
+      }
+
+      .intro {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        position: fixed;
+
+        background: #444;
+        color: #fffbf5;
+        font-size: 16rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation: intro 1s forwards cubic-bezier(0.8, 0, 0.8, 1);
+      }
+
+      .intro > .texts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        opacity: 0;
+        animation: intro-texts 0.5s forwards cubic-bezier(0.5, 0, 0.5, 1);
+      }
+
+      @media only screen and (max-width: 600px) {
+        .intro {
+          font-size: 4rem;
+        }
+      }
+
+      @keyframes intro {
+        50% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-150%);
+        }
+      }
+      @keyframes intro-texts {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .app {
+        background: #fffbf5;
+        max-width: 1280px;
+        width: 100%;
+        padding: 32px;
+        margin: 32px;
+        color: #444;
+      }
+
+      .title {
+        display: flex;
+        justify-items: center;
+        align-items: stretch;
+
+        font-weight: bold;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .title {
+          flex-direction: column;
+        }
+      }
+
+      .title > .name {
+        margin: 16px;
+        font-size: 6rem;
+        line-height: 8rem;
+        text-align: right;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .title > .name {
+          font-size: 3rem;
+          line-height: 5rem;
+        }
+      }
+
+      .title > .divider {
+        height: auto;
+        margin: 8px;
+        border-left: #57a5f7 8px solid;
+        flex-grow: 1;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .title > .divider {
+          border-bottom: #57a5f7 8px solid;
+        }
+      }
+
+      .title > .links {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:focus,
+      a:active {
+        color: #333;
+        text-decoration: none;
+      }
+
+      a:before {
+        content: "   >   ";
+      }
+
+      a {
+        transition: 0.5s;
+        border-bottom: 4px solid #fffbf5;
+      }
+      a:hover {
+        border-bottom: 4px solid #57a5f7;
+        transform: translateX(-4px);
       }
     </style>
-</head>
-<body>
-    
-</body>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="title">
+        <div class="name">
+          <div>白虎</div>
+          <div>WhiteTiger</div>
+        </div>
+        <div class="divider"></div>
+        <div class="links">
+          <a href="https://www.facebook.com/WhiteTiger0102">Facebook</a>
+          <a href="https://x.com/WhiteTigerTW">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="texts">
+        <div>喵</div>
+        <div>MEOW</div>
+      </div>
+    </div>
+  </body>
 </html>
